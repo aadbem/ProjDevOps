@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: lucas lujan
+Build-Jdk: 1.8.0_121
+Main-Class: seila.seilaStart
+Created-By: Maven Integration for Eclipse
+
