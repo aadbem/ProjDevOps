@@ -1,2 +1,2 @@
-todos os testes foram realizados com sucesso!
-novo ciclo de testes
+todos os testes JA foram realizados com sucesso!
+novo ciclo de testes incompletos
