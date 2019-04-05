@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'teste build'
 				bat 'set'
-				//mvn validate compile
+				bat 'mvn validate compile'
             }
         }
         stage('Test') {
