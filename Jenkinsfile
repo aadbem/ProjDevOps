@@ -5,7 +5,6 @@ pipeline {
             steps {
                 echo 'teste build'
 				bat 'set'
-				mvn --version
 				mvn validate compile
             }
         }
