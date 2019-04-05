@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
 				echo 'teste test'
-                echo "Fail!"; exit 1'
+                echo 'Fail!'; 'exit 1'
             }
         }
     }
