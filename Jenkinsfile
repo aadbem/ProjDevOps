@@ -12,7 +12,7 @@ pipeline {
             steps {
 				echo 'teste test'
                 echo 'Fail!'
-				//mvn test install
+				bat 'mvn test install'
             }
         }
     }
