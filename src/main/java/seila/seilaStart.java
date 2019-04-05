@@ -7,6 +7,9 @@ public class seilaStart {
 		System.out.println("Ola Mundo");
 		System.out.println("teste nova versao");
 		System.out.println("alteracao programa");
+		
+		System.out.println("alteração programa via GIT");
+		
 	}
 
 }
