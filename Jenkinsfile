@@ -4,15 +4,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'teste build'
-				//bat 'set'
-				mvn validate compile
+				bat 'set'
+				//mvn validate compile
             }
         }
         stage('Test') {
             steps {
 				echo 'teste test'
-                //echo 'Fail!'
-				mvn test install
+                echo 'Fail!'
+				//mvn test install
             }
         }
     }
