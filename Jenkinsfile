@@ -5,12 +5,14 @@ pipeline {
             steps {
                 echo 'teste build'
 				bat 'set'
+				bat 'mvn validate compile'
             }
         }
         stage('Test') {
             steps {
 				echo 'teste test'
                 echo 'Fail!'
+				bat 'mvn test install'
             }
         }
     }
