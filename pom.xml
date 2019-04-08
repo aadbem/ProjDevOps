@@ -9,6 +9,13 @@
 	<description>seila		</description>
 	<packaging>jar</packaging>
 	
+	<distributionManagement>
+    	<repository>
+      		<id>ftp-repository</id>
+      		<url>ftp://repository.teste.com/repository</url>
+    	</repository>
+  	</distributionManagement>
+	
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -49,6 +56,11 @@
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>5.4.0</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-ftp</artifactId>
+			<version>1.0-beta-6</version>
 		</dependency>
 	</dependencies>
 	<build>
