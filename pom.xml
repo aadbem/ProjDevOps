@@ -12,7 +12,7 @@
 	<distributionManagement>
     	<repository>
       		<id>ftp-repository</id>
-      		<url>ftp://repository.gft.com/repository</url>
+      		<url>ftp://repository.teste.com/repository</url>
     	</repository>
   	</distributionManagement>
 	
