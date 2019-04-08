@@ -1,6 +1,4 @@
 package seila;
-import org.junit.internal.Classes;
-
 import seila.seilaStartSelenium;
 
 public class seilaStart {
