@@ -18,16 +18,20 @@ pipeline {
         //exeutando testes sonar        
         stage('SonarQube analysis') {
  			withSonarQubeEnv('My_Sonar_Quality_Gate') {
+ 			step {
+ 				echo 'teste sonar'
                 bat 'mvn sonar:sonar'
+               }
             }
         }        
         
         // No need to occupy a node
 		stage("SonarQube Quality Gate"){
   			timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-    		def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-    		if (qg.status != 'OK') {
-      			error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    			def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+    			if (qg.status != 'OK') {
+      				error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    			}
     		}
   		}
         
