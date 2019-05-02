@@ -11,11 +11,15 @@ pipeline {
         stage('Test') {
             steps {
 				echo 'teste test'
-                echo 'Fail!'
-				bat 'mvn test install'
+                bat 'mvn test install'
             }
-        }
-        
+        }        
+        stage('Quality') {
+            steps {
+				echo 'teste sonar'
+                bat 'mvn verify sonar:sonar'
+            }
+        }        
         stage('Deploy') {
             steps {
 				echo 'Teste deploy'
