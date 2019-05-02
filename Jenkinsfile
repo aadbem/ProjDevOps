@@ -17,11 +17,8 @@ pipeline {
         
         //exeutando testes sonar        
         stage('SonarQube analysis') {
-            steps {
-				echo 'teste sonar'
-				withSonarQubeEnv('My_Sonar_Quality_Gate') {
-                	bat 'mvn sonar:sonar'
-                }
+ 			withSonarQubeEnv('My_Sonar_Quality_Gate') {
+                bat 'mvn sonar:sonar'
             }
         }        
         
