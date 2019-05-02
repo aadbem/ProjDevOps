@@ -13,13 +13,27 @@ pipeline {
 				echo 'teste test'
                 bat 'mvn test install'
             }
-        }        
-        stage('Quality') {
+        }
+        
+        //exeutando testes sonar        
+        stage('SonarQube analysis') {
             steps {
 				echo 'teste sonar'
-                bat 'mvn verify sonar:sonar'
+				withSonarQubeEnv('My_Sonar_Quality_Gate') {
+                	bat 'mvn sonar:sonar'
+                }
             }
         }        
+        
+        // No need to occupy a node
+		stage("SonarQube Quality Gate"){
+  			timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
+    		def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+    		if (qg.status != 'OK') {
+      			error "Pipeline aborted due to quality gate failure: ${qg.status}"
+    		}
+  		}
+        
         stage('Deploy') {
             steps {
 				echo 'Teste deploy'
