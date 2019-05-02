@@ -15,25 +15,27 @@ pipeline {
             }
         }
         
-        //exeutando testes sonar        
-        stage('SonarQube analysis') {
- 			withSonarQubeEnv('My_Sonar_Quality_Gate') {
- 			step {
- 				echo 'teste sonar'
-                bat 'mvn sonar:sonar'
-               }
+		//executando testes sonar 
+		stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('My_Sonar_Quality_Gate') {
+                    // Optionally use a Maven environment you've configured already
+                    bat 'mvn sonar:sonar'
+                }
             }
-        }        
+        }
         
-        // No need to occupy a node
-		stage("SonarQube Quality Gate"){
-  			timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
-    			def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
-    			if (qg.status != 'OK') {
-      				error "Pipeline aborted due to quality gate failure: ${qg.status}"
-    			}
-    		}
-  		}
+        //estagio de qulity gate
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    // Requires SonarQube Scanner for Jenkins 2.7+
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         
         stage('Deploy') {
             steps {
