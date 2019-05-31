@@ -13,5 +13,14 @@ public class TesteUnidade {//extends TestCase {
 		int z = x + y;    
 		assertEquals(2, z);  
 	}
+	
+	@Test
+	public void executa() {
+		String s[] = new String[1];
+		s[0] = "primeiro";
+		seilaStart.main(s); 
+		
+		assertEquals(1, 1);
+	}
 }
 

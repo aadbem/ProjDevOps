@@ -13,7 +13,7 @@ public class seilaStart {
 		
 		seilaStartSelenium TesteChrome = new seilaStartSelenium();
 		try {
-			TesteChrome.TestSelenium();			
+			//TesteChrome.TestSelenium();			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
