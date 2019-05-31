@@ -1,11 +1,12 @@
 package seila;
 
 import org.junit.Test;
-import junit.framework.TestCase; 
+import static org.junit.Assert.assertEquals;
 
-public class TesteUnidade extends TestCase {  
+
+public class TesteUnidade {//extends TestCase {  
 	private int x = 1;  
-	private int y = 1;    
+	private int y = 1;
 	
 	@Test 
 	public void metodo() {    
@@ -13,3 +14,4 @@ public class TesteUnidade extends TestCase {
 		assertEquals(2, z);  
 	}
 }
+
