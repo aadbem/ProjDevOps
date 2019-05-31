@@ -5,6 +5,7 @@ public class funcoes {
 	public static int somar( int a, int b ) {  
 		//a=5.11;
 		//b=5.122;
+		System.out.println(a + b);
 	    return a + b;  
 	}
 	
