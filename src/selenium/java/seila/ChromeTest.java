@@ -15,7 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import junit.framework.TestCase;
 
 //{@literal @RunWith(JUnit4.class)
-public class ChromeTest extends TestCase{
+public class ChromeTest {//extends TestCase{
 
 /*
 	   private static ChromeDriverService service;
