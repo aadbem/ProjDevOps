@@ -18,7 +18,7 @@ pipeline {
         
         stage('Jmeter Testes') {
         	steps {
-        		bat '\\Users\aodm\Documents\Customers\SulAmerica - RJ\Projetos\Scripts JMETER\executa silencioso_autentica_hml'         
+        		bat 'C:\Jmeter_Resultados\executa silencioso_autentica_hml.bat'         
         	}
         
         }
