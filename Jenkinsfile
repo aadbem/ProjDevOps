@@ -16,6 +16,13 @@ pipeline {
             }
         }
         
+        stage('Jmeter Testes') {
+        	steps {
+        		bat 'C:\Users\aodm\Documents\Customers\SulAmerica - RJ\Projetos\Scripts JMETER\executa silencioso_autentica_hml.bat'         
+        	}
+        
+        }
+        
 		//executando testes sonar 
 		stage('SonarQube analysis') {
             steps {
